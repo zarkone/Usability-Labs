@@ -1,0 +1,102 @@
+body {
+	background: url('/back/U.jpg');
+	font-family: "Trebuchet MS";
+}
+.span5 {
+	width: 500px;
+}
+.span4 {
+	width: 400px;
+}
+.span3 {
+	width: 300px;
+}
+.span2 {
+	width: 190px;
+}
+.span1 {
+	width: 90px;
+}
+button, input {
+	float: left;
+}
+button {
+	cursor:pointer;
+}
+ul {
+	display: table;
+	color: #fff;
+
+}
+li {
+	display: block;
+	border-radius: 5px;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	display: inline;
+	min-width: 30px;
+	opacity:0.8;
+	cursor:pointer;
+	border-bottom: 1px dashed #999;
+}
+li.active, li:hover{
+	opacity:1;
+	background: #fff;
+	color: #006CB7;
+	font-weight: bold;
+	border-bottom: 1px solid transparent;
+
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+canvas {
+	border: 1px solid #000;
+	background: #fff;
+	border-radius: 10px;
+}
+
+div {
+	padding: 10px;
+}
+#speedValue {
+	font-size: 21pt;
+	display: block;
+	margin-top: -23px;
+	padding-bottom: 0px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding-top: 0px;
+	padding-left: 15px;
+
+	border-radius: 5px;
+	background: #fff;
+} 
+
+#universeMap{
+	position: absolute;
+	z-index: 10;
+	border-radius: 10px;
+	top: 10px;
+	left: 220px;
+	cursor: pointer;
+
+	display: none;
+}
+#universeMapCtrl{
+	margin-left: 1px;
+	width: 87px;
+}
+#gravityCtrl{
+	width: 230px;
+}
+
+h2, h3{
+	color: #fff;
+}
+h3{
+}

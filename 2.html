@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="language" content="martian" /> 
+	<link rel="stylesheet" type="text/css" href="/l2.css" />
+</head>
+<body>
+	<div class="span3 left">
+
+		<h2>Место</h2>
+		<div id="teleport">
+				<input type="search" class="span2" x-webkit-speech="" speech="" autocomplete="on" placeholder="Поиск...">
+<!-- 				<img src="/universeMap.png"> -->
+			<button id="universeMapCtrl" >карта</button>	
+			<br/>
+			<ul id="stared">
+				<h3>избранные</h3>
+				<li>Токио</li>
+				<li>Сатурн</li>
+			</ul>
+			<ul id="recent">
+				<h3>недавние</h3>
+				<li>Астероид 299.17b</li>
+				<li>Калимдор</li>
+				<li>Убежище 13</li>
+				<li>Ядро Солнца</li>
+				<li>Квазар 11:4 в созвездии Пегаса</li>
+			</ul>
+
+		</div>
+	</div>
+	<div class="span4 left">
+		<h2>Окружение</h2>
+			<ul>
+				<h3>пол</h3>
+				<li>Ковёр</li>
+				<li>Паркет</li>
+				<li>Резиновые пупырышки</li>
+				<li>Бассейн</li>
+				<li class="active">Травка</li>
+				<li>Скалы</li>
+			</ul>
+			<ul>
+				<h3>ландшафт</h3>
+				<li>Лес</li>
+				<li>Пещера</li>
+				<li>Поляна</li>
+				<li class="active">Марс</li>
+				<li>Сириус</li>
+				<li>Венера</li>
+				<li>Кольцо</li>
+				<li>Вакуум</li>
+			</ul>
+			<ul>
+			<h3>волновой диапазон</h3>
+				<li>Инфракрасный</li>
+				<li>Ультрафиолет</li>
+				<li class="active">Рентген</li>
+				<li>Гамма-лучи</li>
+				<li>Радиоволны</li>
+				<li>Нормальный</li>
+			</ul>
+		
+	</div>
+	<div class="span5 left">
+		<h2>Обстановка</h2>
+			<h3>гравитация</h3>
+		  <ul id="direction">
+		  	<li>вверх &uarr;</span>
+		  	<li>вниз &darr;</span>
+		  	<li>влево &larr;</span>
+		  	<li>вправо &rarr;</span>
+		  </ul>
+		  <div id="speed" >
+			  <button id="noGravity">Невесомость</button>
+			  <input id="gravityCtrl" type="range" min="0" max="26.5" step="0.1">
+			  <button id="jupiter">Юпитер</button>
+			  <button id="normal" class="span4">Норма</button>
+			</div>
+			<div id="speedValue" class="left"></div>
+			
+			<div>
+				<br/>
+				<h3>интерьер</h3>
+				<canvas id="room" width="500px" height="300px"></canvas>
+			</div>
+	</div>
+
+
+<img id="universeMap" src="/universeMap.png">
+
+</body>
+<script src="/script.js"></script>
+</html>
