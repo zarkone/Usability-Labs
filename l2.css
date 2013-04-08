@@ -1,6 +1,7 @@
 body {
 	background: url('/back/U.jpg');
 	font-family: "Trebuchet MS";
+	color: #fff;
 }
 .span5 {
 	width: 500px;
@@ -19,9 +20,47 @@ body {
 }
 button, input {
 	float: left;
+	border: 1px solid gray;
+	font-size: 14pt;
+
+}
+
+
+input {
+
+	height: 28px;
+	padding: 0px;
+
+}
+#searchPlace{
+	width: 220px;
+}
+#goToCtrl{
+	width: 50px;
+}
+#universeMapCtrl{
+	width: 230px;
+	color: #fff;
+	opacity: 0.8;
+}
+#universeMapCtrl:hover{
+	opacity: 1;
 }
 button {
+	height: 30px;
 	cursor:pointer;
+	background: #fff;
+}
+
+#universeMap{
+	position: absolute;
+	z-index: 10;
+	border-radius: 10px;
+	top: 10px;
+	left: 220px;
+	cursor: pointer;
+
+	display: none;
 }
 ul {
 	display: table;
@@ -32,7 +71,7 @@ li {
 	display: block;
 	border-radius: 5px;
 	float: left;
-	padding: 5px;
+	padding: 4px;
 	margin: 5px;
 	display: inline;
 	min-width: 30px;
@@ -44,7 +83,6 @@ li.active, li:hover{
 	opacity:1;
 	background: #fff;
 	color: #006CB7;
-	font-weight: bold;
 	border-bottom: 1px solid transparent;
 
 }
@@ -55,7 +93,7 @@ li.active, li:hover{
 	float: right;
 }
 canvas {
-	border: 1px solid #000;
+	border: 1px solid gray;
 	background: #fff;
 	border-radius: 10px;
 }
@@ -73,30 +111,21 @@ div {
 	padding-top: 0px;
 	padding-left: 15px;
 
-	border-radius: 5px;
-	background: #fff;
 } 
 
-#universeMap{
-	position: absolute;
-	z-index: 10;
-	border-radius: 10px;
-	top: 10px;
-	left: 220px;
-	cursor: pointer;
+#direction{
+	margin-left: 20px;
+}
 
-	display: none;
-}
-#universeMapCtrl{
-	margin-left: 1px;
-	width: 87px;
-}
 #gravityCtrl{
-	width: 230px;
+	width: 178px;
+	margin: 2px;
 }
 
 h2, h3{
 	color: #fff;
 }
-h3{
+#roomCtrl{
+	margin-top: 20px;
 }
+
