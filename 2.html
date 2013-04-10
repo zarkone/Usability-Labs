@@ -11,30 +11,28 @@
 		<h2>Место</h2>
 		<div id="teleport">
 			<a href="#" id="universeMapCtrl">карта вселенной</a> &rarr;	
-				<input type="text" id="searchPlace" x-webkit-speech="" speech="" autocomplete="on" placeholder="Поиск...">
+				<input type="text" id="searchInput" x-webkit-speech="" speech="" autocomplete="on" placeholder="Поиск...">
 <!-- 				<img src="/universeMap.png"> -->
 			<button id="goToCtrl">&rarr;</button>	
-			<ul id="stared">
+			<ul id="recent" class="places">
 				<h3>избранные</h3>
-				<li>Токио</li>
-				<li>Сатурн</li>
-				<li>Гаваи</li>
-				<li>ОАЭ</li>
-			</ul>
-			<ul id="recent">
-				<h3>недавние</h3>
-				<li>Астероид 299.17b</li>
-				<li>Калимдор</li>
-				<li>Убежище 13</li>
-				<li>Ядро Солнца</li>
-				<li>Квазар 11:4 в созвездии Пегаса</li>
+				<li id="tokio">Токио</li>
+				<li id="saturn">Сатурн</li>
+				<li id="havaii">Гаваи</li>
+				<li id="dubai">ОАЭ</li>
+				<h3 >недавние</h3>
+				<li id="U">Астероид 299.17b</li>
+				<li id="kalimdor">Калимдор</li>
+				<li id="vault13">Убежище 13</li>
+				<li id="sun">Ядро Солнца</li>
+				<li id="kvazar">Квазар 11:4 в созвездии Пегаса</li>
 			</ul>
 
 		</div>
 	</div>
 	<div class="span4 left">
 		<h2>Окружение</h2>
-			<ul>
+			<ul id="floor">
 				<h3>пол</h3>
 				<li>Ковёр</li>
 				<li>Паркет</li>
@@ -44,7 +42,7 @@
 				<li>Скалы</li>
 				<li>Кибер-полотно</li>
 			</ul>
-			<ul>
+			<ul id="landscape">
 				<h3>ландшафт</h3>
 				<li>Лес</li>
 				<li>Пещера</li>
@@ -56,7 +54,7 @@
 				<li>Кольцо</li>
 				<li>Вакуум</li>
 			</ul>
-			<ul>
+			<ul id="spectrum">
 			<h3>спектр зрения</h3>
 				<li>Гуманоиды Нептуна</li>
 				<li>Клингоны</li>
