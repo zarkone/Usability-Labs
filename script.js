@@ -50,7 +50,11 @@ goToCtrl.onclick = function (event) {
 
 	for(i =0; i < recentPlacesLength; i++) {
 
-		if (recentPlaces[i].innerText == searchInput.value) return;
+		if (recentPlaces[i].innerText == searchInput.value) {
+			recentPlaces[i].click();
+			return;
+		}
+
 	}
 
 	var newPlace = document.createElement("li");
@@ -163,3 +167,106 @@ function bindClick(item, toBind) {
 	};
 
 }
+
+// 
+// Room manager
+// 
+
+var room = document.getElementById("room").getContext("2d");
+var roomWidth = document.getElementById("room").width;
+var roomHeight = document.getElementById("room").height;
+
+function drawSofa(point, size){
+	
+	room.fillStyle = "#88D3DF";
+	room.strokeStyle = "#000";
+	room.strokeRect (point.left, point.top, 200 + size.w, 100 + size.h);
+	room.fillRect (point.left, point.top, 200 + size.w, 100 + size.h);
+	
+	room.strokeRect (point.left + 5, point.top + 5, 20, 40);
+	room.strokeRect (point.left + 5, point.top + 55, 20, 40);
+}
+
+function drawWindow(point){
+	
+	room.fillStyle = "#4E68FF";
+	room.strokeStyle = "#000";
+	room.strokeRect (point.left, point.top, 10, 200);
+	room.fillRect (point.left, point.top, 10, 200);
+	
+}
+
+function drawTv(point, color) {
+	
+	room.beginPath();
+	room.moveTo(point.left, point.top);
+	room.arcTo(point.left + 50,point.top, point.left + 50,point.top + 100,40);
+	room.arcTo(point.left + 50,point.top + 200,point.left - 50, point.top + 100,30);
+	room.arcTo(point.left - 50,point.top + 100, point.left - 50, point.top,20);
+	room.arcTo(point.left - 50,point.top, point.left + 50, point.top - 50,10);
+	room.closePath();
+	room.strokeStyle = "#000";
+	room.fillStyle = color;
+	room.fill();
+	room.stroke();
+
+}
+
+function draw(event) {
+
+	var preset = presets[event.toElement.id];
+	room.clearRect(0,0,roomWidth, roomHeight);
+	drawSofa(preset.sofaPoint, preset.sofaSize);
+
+	drawWindow(preset.windowPoint, preset.windowSize);
+
+	drawTv(preset.tvPoint, preset.tvColor);
+}
+
+var presets = [];
+
+presets["usual"] = {
+	sofaPoint : {left: 10, top: 10},
+	sofaSize : {w: 0, h: 0},
+	windowPoint : {left: 1, top: 140},
+	windowSize : {w: 10, h: 200},
+	tvPoint : {left: 415, top: 50},
+	tvColor : "#f0f"
+};
+
+presets["weekend"] = {
+	sofaPoint : {left: 10, top: 100},
+	sofaSize : {w: 10, h: 40},
+	windowPoint : {left: roomWidth-10, top: 40},
+	windowSize : {w: 10, h: 200},
+	tvPoint : {left: 405, top: 50},
+	tvColor : "#ff0"
+};
+
+presets["conference"] = {
+	sofaPoint : {left: 210, top: 100},
+	sofaSize : {w: -120, h: 0},
+	windowPoint : {left: roomWidth+10, top: 40},
+	windowSize : {w: 10, h: 200},
+	tvPoint : {left: 405, top: 90},
+	tvColor : "#00f"
+};
+presets["gym"] = {
+	sofaPoint : {left: -1210, top: -1100},
+	sofaSize : {w: -120, h: 0},
+	windowPoint : {left: roomWidth+10, top: 40},
+	windowSize : {w: 10, h: 200},
+	tvPoint : {left: 395, top: 10},
+	tvColor : "#0ff"
+};
+
+
+
+var presetsList = document.getElementById("presets").getElementsByTagName("li"), 
+	presetsListLength = presetsList.length, i;
+
+for(i = presetsListLength - 1; i >=0; i--) {
+	bindClick(presetsList[i], draw);
+}
+
+presetsList[0].click();
