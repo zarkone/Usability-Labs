@@ -36,6 +36,7 @@ document.onclick = function (event) {
 universeMap.onclick = function (event) {
 	searchInput.value = "(" + getCosmoCoords(event.clientX, event.clientY) + ")";
 	universeMap.style.display = "none";
+	goToCtrl.click();
 
 };
 
@@ -55,9 +56,11 @@ goToCtrl.onclick = function (event) {
 	var newPlace = document.createElement("li");
 		newPlace.id = "U";
 		newPlace.innerText = searchInput.value;
-		newPlace.onclick = changeWall;
+		bindClick(newPlace, changeWall);
+		bindClick(newPlace, activate);
 
 	recent.appendChild(newPlace);
+	newPlace.click();
 };
 
 function getCosmoCoords(x,y) {
@@ -130,19 +133,7 @@ var lists = document.getElementsByTagName("li"),
 
 
 for(i = listsLength - 1; i >= 0; i--) {
-	
-	(function (item) {
-
-		var click = item.onclick || function (){};
-
-		item.onclick = function (event) {
-
-			if(click) { click(event); }
-
-			activate(event);	
-		};
-
-	})(lists[i]);
+	bindClick(lists[i], activate);
 }
 
 function activate(event) {
@@ -157,5 +148,18 @@ function activate(event) {
 			brothers[i].classList.add("active");
 		}
 	}	
+}
+
+
+function bindClick(item, toBind) {
+
+	var click = item.onclick || function (){};
+
+	item.onclick = function (event) {
+
+		if(click) { click(event); }
+
+		toBind(event);	
+	};
 
 }
